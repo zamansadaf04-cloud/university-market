@@ -1,0 +1,77 @@
+Replace manual bKash transaction ID system with bKash payment gateway flow.
+
+When seller enters product price, calculate 5% listing fee automatically.
+
+Add a “Pay Listing Fee” button.
+
+When seller clicks it, redirect to bKash checkout/payment page for the exact 5% amount.
+
+After successful payment, automatically save:
+- payment status = Paid
+- transaction ID
+- listing fee amount
+- product status = Pending Admin Approval or Active
+
+Do not ask users to enter bKash PIN inside our app.
+Do not store bKash PIN.
+Keep manual transaction ID option only as fallback.
+
+
+Improve the manual bKash listing fee system for personal bKash.
+
+When seller creates a listing:
+- Automatically calculate 5% listing fee from product price.
+- Show my personal bKash number.
+- Tell seller to use Send Money only.
+- Seller must enter bKash Transaction ID.
+- Seller must upload payment screenshot.
+- Seller must enter sender bKash number.
+
+After submission:
+- Product status = Pending Payment Verification.
+- Product should not be visible publicly.
+
+Create an Admin Verification Dashboard:
+- Show all pending listings.
+- Show product title, price, required 5% fee, seller name, sender bKash number, transaction ID, and payment screenshot.
+- Add Approve and Reject buttons.
+- If approved, product becomes public.
+- If rejected, product remains hidden and seller sees rejection message.
+
+Add warning:
+“Do not share your bKash PIN. Only send the listing fee to the admin bKash number.”
+
+
+Create a hidden Admin Dashboard for product and payment approval.
+
+Admin Features:
+- Admin login access
+- View all pending listings
+- Show:
+  - product title
+  - seller name
+  - product price
+  - calculated 5% fee
+  - bKash transaction ID
+  - payment screenshot
+  - sender bKash number
+  - submission time
+
+Add buttons:
+- Approve Product
+- Reject Product
+
+If approved:
+- Product becomes public in marketplace
+- Seller gets “Approved” notification
+
+If rejected:
+- Product stays hidden
+- Seller gets rejection message
+
+Add filters:
+- Pending
+- Approved
+- Rejected
+
+Admin dashboard should only be visible to admin accounts.
